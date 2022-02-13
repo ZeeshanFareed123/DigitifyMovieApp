@@ -8,8 +8,7 @@ import com.bumptech.glide.Glide
 @BindingAdapter("load")
 fun loadImage(view: ImageView, url: String?) {
 
-    Log.d("ImageUrl", "view"+ view)
-    Log.d("ImageUrl", "url"+ url)
+    Log.d("ImageUrl", "url$url")
 
     url?.let {
         Glide.with(view).load("https://image.tmdb.org/t/p/w500${it}").into(view)

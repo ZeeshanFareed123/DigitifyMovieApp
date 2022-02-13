@@ -14,7 +14,7 @@ import com.example.digitifymovieapp.model.Result
 class MoviePagingAdapter : PagingDataAdapter<Result, MoviePagingAdapter.MyViewHolder>(DIFF_UTIL) {
 
 
-    var onCLick: ((String) -> Unit)? = null
+    private var onCLick: ((String) -> Unit)? = null
 
     companion object {
         val DIFF_UTIL = object : DiffUtil.ItemCallback<Result>() {
@@ -43,7 +43,7 @@ class MoviePagingAdapter : PagingDataAdapter<Result, MoviePagingAdapter.MyViewHo
 
         holder.viewDataBinding.root.setOnClickListener {
             onCLick?.let {
-                it(data?.voteAverage!!.toString())
+                it(data?.id!!.toString())
             }
         }
 

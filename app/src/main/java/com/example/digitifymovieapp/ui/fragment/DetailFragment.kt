@@ -14,30 +14,18 @@ import com.example.digitifymovieapp.viewModel.MovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [DetailFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
-    lateinit var binding: FragmentDetailBinding
+    private lateinit var binding: FragmentDetailBinding
 
-    val args: DetailFragmentArgs by navArgs()
+    private val args: DetailFragmentArgs by navArgs()
 
-    val viewModel: MovieViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private val viewModel: MovieViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentDetailBinding.inflate(inflater, container, false)
         return binding.root
 
@@ -71,6 +59,7 @@ class DetailFragment : Fragment() {
 
                 }
 
+                else -> {}
             }
         }
 

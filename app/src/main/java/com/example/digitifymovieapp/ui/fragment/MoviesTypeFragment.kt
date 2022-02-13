@@ -6,41 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.digitifymovieapp.R
 import com.example.digitifymovieapp.databinding.FragmentMoviesTypeBinding
 import com.example.digitifymovieapp.ui.paging.MoviePagingAdapter
 import com.example.digitifymovieapp.viewModel.MovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MoviesTypeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-
 @AndroidEntryPoint
 class MoviesTypeFragment : Fragment() {
-    lateinit var binding: FragmentMoviesTypeBinding
+    private lateinit var binding: FragmentMoviesTypeBinding
 
     val viewModel: MovieViewModel by viewModels()
 
-
     private val movieAdapter = MoviePagingAdapter()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentMoviesTypeBinding.inflate(inflater, container, false)
         return binding.root

@@ -6,8 +6,8 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
 import androidx.paging.liveData
+import com.example.digitifymovieapp.model.DetailMovieResponse
 import com.example.digitifymovieapp.remoteData.ApiEndPoint
-import com.example.digitifymovieapp.model.MovieDetails
 import com.example.digitifymovieapp.repo.MovieDetailsRepository
 import com.example.digitifymovieapp.ui.paging.MoviePaging
 import com.example.digitifymovieapp.utils.Events
@@ -37,8 +37,8 @@ class MovieViewModel @Inject constructor(
         query.postValue(s)
     }
 
-    private val _movieDetails = MutableLiveData<Events<Result<MovieDetails>>>()
-    val movieDetails: LiveData<Events<Result<MovieDetails>>> = _movieDetails
+    private val _movieDetails = MutableLiveData<Events<Result<DetailMovieResponse>>>()
+    val movieDetails: LiveData<Events<Result<DetailMovieResponse>>> = _movieDetails
 
 
     fun getMovieDetails(imdbId: String) = viewModelScope.launch {
