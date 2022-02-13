@@ -7,3 +7,9 @@
 3. Added Navigation Component library
 
 4. Added Hilt-dagger for DI
+
+5. Pagging
+
+6. Retrofit
+
+7. Data Binding
