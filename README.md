@@ -13,3 +13,5 @@
 6. Retrofit
 
 7. Data Binding
+
+8. Detail Screen of Selected Movie 
